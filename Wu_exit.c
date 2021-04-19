@@ -4,7 +4,7 @@
 #include <string.h>
 #include <sys/wait.h>
 
-void main(char commands[1024][1024],int count)
+void exit(char commands[1024][1024],int count)
 {	//collects the last 4 commands
 	int start = count;
 	if(start < 4)
