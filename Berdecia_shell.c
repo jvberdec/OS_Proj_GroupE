@@ -28,7 +28,7 @@ void showUserGuideline()
 // print out "(my_terminal)#"
 void showUserPrompt()
 {
-    printf("(my_terminal)# ");
+    printf("(OS332-Terminal)# ");
 }
 
 // divide input line into tokens
@@ -124,22 +124,30 @@ int main(int argc, char *argv[])
         
         if (strcmp(cmd_tokens[0], "list") == 0)
         {
-            printf("list!!!");
             list();
             continue; // stay in the parent process/ while loop
         }
         
         if (strcmp(cmd_tokens[0], "path") == 0)
         {
-            printf("path!!!");
+            printf("...Troubleshooting path method pending... \n");
+//            path();
             continue; // stay in the parent process/ while loop
         }
 
         // if the user input is 'quit' then exit the program
         if (strcmp(cmd_tokens[0], "exit") == 0)
         {
-            printf("Bye Bye!!\n");
-//            exit(<#char (*commands)[1024]#>, <#int count#>);
+            printf("...Troubleshooting exit method pending...\n");
+            // exit(<#char (*commands)[1024]#>, <#int count#>);
+            printf("Shell exited");
+            printf("By Group E: \n");
+            printf("Group Leader/Shell: Julia Berdecia \n");
+            printf("Tree: Muhammed Rahman \n");
+            printf("List: Steven Bueno \n");
+            printf("Path: David Diop \n");
+            printf("Exit: Hui Wu \n");
+
             return 0;
         }
 
