@@ -16,7 +16,7 @@ void readFile(int fd, int fd2) {
 	}
 }
 
-int main() {
+int path() {
 	int t1, t2, t3;
 	char* cwd;
 	char* buf;
@@ -55,7 +55,7 @@ int main() {
 			readFile(t2, t3);
 		}
 	}
-	
+
 	close(t1);
 	close(t2);
 	close(t3);
