@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include <unistd.h>      
-#include <sys/wait.h> 
+#include <unistd.h>
+#include <sys/wait.h>
 
-int main(){
+int list(){
   system("clear");
   FILE *new_fp;
   new_fp = fopen("t1.txt", "w+");
