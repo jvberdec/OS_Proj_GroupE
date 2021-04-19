@@ -1,15 +1,15 @@
-////
-////  Wu_exit.h
-////  OS Project Shell
-////
-////  Created by Julia Berdecia on 4/19/21.
-////
 //
-//#ifndef Wu_exit_h
-//#define Wu_exit_h
+//  Wu_exit.h
+//  OS Project Shell
 //
-//void exit(char commands[1024][1024],int count);
+//  Created by Julia Berdecia on 4/19/21.
 //
-//
-//
-//#endif /* Wu_exit_h */
+
+#ifndef Wu_exit_h
+#define Wu_exit_h
+
+void exit(char,int);
+
+
+
+#endif /* Wu_exit_h */
