@@ -139,7 +139,7 @@ int main(int argc, char *argv[])
         if (strcmp(cmd_tokens[0], "exit") == 0)
         {
             printf("...Troubleshooting exit method pending...\n");
-            // exit(<#char (*commands)[1024]#>, <#int count#>);
+            // my_exit(<#char (*commands)[1024]#>, <#int count#>);
             printf("Shell exited");
             printf("By Group E: \n");
             printf("Group Leader/Shell: Julia Berdecia \n");
