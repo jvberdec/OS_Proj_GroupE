@@ -20,7 +20,7 @@ char *cmd_tokens[512];
 void showUserGuideline()
 {
     printf("CSC 332 Operating Systems Final Project\n");
-    printf("Run commands: tree, list, path, or exit\n");
+    printf("Run commands: tree, list, path, or quit\n");
     printf("Don't forget to press enter!\n");
 
 }
@@ -36,6 +36,7 @@ void parseCommand(char *input)
 {
     int i = 0;
     char *token;
+    
 
     // returns the first token
     token = strtok(input, "\n ");
@@ -134,29 +135,25 @@ int main(int argc, char *argv[])
 //            path();
             continue; // stay in the parent process/ while loop
         }
-
-        // if the user input is 'quit' then exit the program
-        if (strcmp(cmd_tokens[0], "exit") == 0)
-        {
-            printf("...Troubleshooting exit method pending...\n");
-            // my_exit(<#char (*commands)[1024]#>, <#int count#>);
-            printf("Shell exited");
+        
+        char commands;
+        int count;
+        
+        if (strcmp(cmd_tokens[0], "exit") == 0){
+            my_exit(commands, count);
+            printf("SHELL EXITED \n");
             printf("By Group E: \n");
             printf("Group Leader/Shell: Julia Berdecia \n");
             printf("Tree: Muhammed Rahman \n");
             printf("List: Steven Bueno \n");
             printf("Path: David Diop \n");
             printf("Exit: Hui Wu \n");
-
             return 0;
         }
 
-        // execute the command
         executeCommand();
     }
 
-    // free the buffer
-//    free(line);
 
     return 0;
 }
