@@ -135,7 +135,6 @@ int main(int argc, char *argv[])
                 
         if (strcmp(cmd_tokens[0], "path") == 0)
         {
-            printf("...Troubleshooting path method pending... \n");
             path();
             continue; // stay in the parent process/ while loop
         }
@@ -148,7 +147,7 @@ int main(int argc, char *argv[])
                 printf("%s\n", commands[i]);
             }
 
-            printf("Bye Bye!!\n");
+            my_exit(commands, count);
             return 0;
         }
 
@@ -157,7 +156,7 @@ int main(int argc, char *argv[])
     }
 
     // free the buffer
-    free(input);
+//    free(input);
 
     return 0;
 }
