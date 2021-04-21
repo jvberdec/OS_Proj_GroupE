@@ -15,6 +15,9 @@
 
 // declare an array that will hold the commands
 char *cmd_tokens[512];
+char commands[1024][1024];
+int count = 0;
+
 
 // show info to the users
 void showUserGuideline()
@@ -85,12 +88,13 @@ void executeCommand()
 }
 
 
+
+
 int main(int argc, char *argv[])
 {
     char *line = NULL;
     size_t len = 0;
     ssize_t lineSize = 0;
-
     showUserGuideline();
 
     // ask user for a command to type
@@ -113,9 +117,14 @@ int main(int argc, char *argv[])
             perror("Please type in a command ");
             continue; // stay in the parent process/ while loop
         }
-
+                
+//       populate commands array before parsing
+        strcpy(commands[count++], line);
+        
         // parse the input
         parseCommand(line);
+        
+        
 
         if (strcmp(cmd_tokens[0], "tree") == 0)
         {
@@ -132,22 +141,15 @@ int main(int argc, char *argv[])
         if (strcmp(cmd_tokens[0], "path") == 0)
         {
             printf("...Troubleshooting path method pending... \n");
-//            path();
+            path();
             continue; // stay in the parent process/ while loop
         }
-        
-        char commands;
-        int count;
+
         
         if (strcmp(cmd_tokens[0], "exit") == 0){
+            
             my_exit(commands, count);
-            printf("SHELL EXITED \n");
-            printf("By Group E: \n");
-            printf("Group Leader/Shell: Julia Berdecia \n");
-            printf("Tree: Muhammed Rahman \n");
-            printf("List: Steven Bueno \n");
-            printf("Path: David Diop \n");
-            printf("Exit: Hui Wu \n");
+            
             return 0;
         }
 
