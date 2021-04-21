@@ -13,7 +13,7 @@ void my_exit(char commands[1024][1024],int count)
 	}
 	else
 	{
-		start = -4;
+		start -= 4;
 	}
 
 	for (int i = start; i < count; i++)
