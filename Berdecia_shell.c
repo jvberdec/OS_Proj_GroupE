@@ -15,9 +15,6 @@
 
 // declare an array that will hold the commands
 char *cmd_tokens[512];
-char commands[1024][1024];
-int count = 0;
-
 
 // show info to the users
 void showUserGuideline()
@@ -96,6 +93,9 @@ int main(int argc, char *argv[])
     size_t len = 0;
     ssize_t lineSize = 0;
     showUserGuideline();
+    
+    char commands[1024][1024];
+    int count = 0;
 
     // ask user for a command to type
     // execute the command when user presses Enter
@@ -123,7 +123,6 @@ int main(int argc, char *argv[])
         
         // parse the input
         parseCommand(line);
-        
         
 
         if (strcmp(cmd_tokens[0], "tree") == 0)
