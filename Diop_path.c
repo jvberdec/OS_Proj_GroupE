@@ -5,7 +5,7 @@
 #include <errno.h>
 #include <string.h>
 #include <unistd.h>
-#include <linux/limits.h>
+#include <limits.h>
 
 void readFile(int fd, int fd2) {
 	size_t count = 1;
@@ -19,10 +19,9 @@ void readFile(int fd, int fd2) {
 int path() {
 	int t1, t2, t3;
 	char* cwd;
-	char* buf;
 
 	//Print the current directory
-	cwd = getcwd(buf, PATH_MAX);
+	getcwd(cwd, PATH_MAX);
 	printf("%s\n", cwd);
 
 	errno = 0;
