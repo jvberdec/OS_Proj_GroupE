@@ -13,7 +13,7 @@ void my_exit(char commands[1024][1024],int count)
 	}
 	else
 	{
-		start -= 4;
+		start = -4;
 	}
 
 	for (int i = start; i < count; i++)
@@ -43,14 +43,20 @@ void my_exit(char commands[1024][1024],int count)
 	else if (pid >0)
 	{
 		wait(NULL);
-		printf("\n Hit Return to exit Shell");
+		printf("\n -> Are you sure you want to exit? If yes, press ENTER.");
 		getchar();
-		// FILE *f = fopen("file.txt","w");
-		// 	for (int i =0; i < count; i++)
-		// 	{
-		// 		fprintf(f,"%s\n",commands[i]);
-		// 	}
-		// 	fclose(f);
-		printf("\n Shell have exited \n");
+		 FILE *f = fopen("file.txt","w");
+		 	for (int i =0; i < count; i++)
+		 	{
+		 		fprintf(f,"%s\n",commands[i]);
+		 	}
+		 	fclose(f);
+        printf("SHELL EXITED \n");
+        printf("By Group E: \n");
+        printf("Group Leader/Shell: Julia Berdecia \n");
+        printf("Tree: Muhammed Rahman \n");
+        printf("List: Steven Bueno \n");
+        printf("Path: David Diop \n");
+        printf("Exit: Hui Wu \n");
 	}
 }
