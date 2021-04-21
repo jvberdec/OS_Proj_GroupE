@@ -15,6 +15,8 @@
 
 // declare an array that will hold the commands
 char *cmd_tokens[512];
+char commands[1024][50];
+// show info to the users
 
 // show info to the users
 void showUserGuideline()
@@ -36,7 +38,6 @@ void parseCommand(char *input)
 {
     int i = 0;
     char *token;
-    
 
     // returns the first token
     token = strtok(input, "\n ");
@@ -89,13 +90,11 @@ void executeCommand()
 
 int main(int argc, char *argv[])
 {
-    char *line = NULL;
-    size_t len = 0;
-    ssize_t lineSize = 0;
-    showUserGuideline();
-    
-    char commands[1024][1024];
+    char input[1024]; // String To Take Input
     int count = 0;
+    int length;
+
+    showUserGuideline();
 
     // ask user for a command to type
     // execute the command when user presses Enter
@@ -105,25 +104,22 @@ int main(int argc, char *argv[])
         showUserPrompt();
 
         // read the user input from the console
-        lineSize = getline(&line, &len, stdin);
-        if (lineSize == -1)
-        {
-            perror("getline() error");
-        }
+        fgets(input, 1024, stdin); // Obtain Input
+        length = strlen(input);    // Get Length of Input
+        input[length - 1] = '\0';  // Limit The length so it Isn't 1024.
+
+        // copy input to commands array
+        strcpy(commands[count++], input);
 
         // check if the user input is empty
-        if (strcmp(line, "\n") == 0)
+        if (strcmp(input, "\n") == 0)
         {
             perror("Please type in a command ");
             continue; // stay in the parent process/ while loop
         }
-                
-//       populate commands array before parsing
-        strcpy(commands[count++], line);
-        
+
         // parse the input
-        parseCommand(line);
-        
+        parseCommand(input);
 
         if (strcmp(cmd_tokens[0], "tree") == 0)
         {
@@ -136,7 +132,7 @@ int main(int argc, char *argv[])
             list();
             continue; // stay in the parent process/ while loop
         }
-        
+                
         if (strcmp(cmd_tokens[0], "path") == 0)
         {
             printf("...Troubleshooting path method pending... \n");
@@ -144,17 +140,24 @@ int main(int argc, char *argv[])
             continue; // stay in the parent process/ while loop
         }
 
-        
-        if (strcmp(cmd_tokens[0], "exit") == 0){
-            
-            my_exit(commands, count);
-            
+        // if the user input is 'exit' then exit the program
+        if (strcmp(cmd_tokens[0], "exit") == 0)
+        {
+            for (int i = 0; i < count; i++)
+            {
+                printf("%s\n", commands[i]);
+            }
+
+            printf("Bye Bye!!\n");
             return 0;
         }
 
+        // execute the command
         executeCommand();
     }
 
+    // free the buffer
+    free(input);
 
     return 0;
 }
