@@ -6,6 +6,7 @@
 
 void my_exit(char commands[1024][1024],int count)
 {	//collects the last 4 commands
+	printf("Printing the last 4 commands used \n");
 	int start = count;
 	if(start < 4)
 	{
@@ -13,7 +14,7 @@ void my_exit(char commands[1024][1024],int count)
 	}
 	else
 	{
-		start = -4;
+		start -= 4;
 	}
 
 	for (int i = start; i < count; i++)
