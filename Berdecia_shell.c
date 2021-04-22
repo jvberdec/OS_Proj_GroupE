@@ -142,11 +142,6 @@ int main(int argc, char *argv[])
         // if the user input is 'exit' then exit the program
         if (strcmp(cmd_tokens[0], "exit") == 0)
         {
-            for (int i = 0; i < count; i++)
-            {
-                printf("%s\n", commands[i]);
-            }
-
             my_exit(commands, count);
             return 0;
         }
