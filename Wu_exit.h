@@ -8,7 +8,7 @@
 #ifndef Wu_exit_h
 #define Wu_exit_h
 
-void my_exit(char,int);
+void my_exit(char commands [1024][50],int count);
 
 
 
