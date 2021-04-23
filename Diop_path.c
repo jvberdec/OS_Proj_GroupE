@@ -18,7 +18,7 @@ void readFile(int fd, int fd2) {
 
 int path() {
 	int t1, t2, t3;
-	char* cwd;
+	char cwd[PATH_MAX];
 
 	//Print the current directory
 	getcwd(cwd, PATH_MAX);
