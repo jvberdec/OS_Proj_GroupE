@@ -56,15 +56,8 @@ void my_exit(char commands[1024][50],int count)
 		printf("\n -> Are you sure you want to exit? If yes, press ENTER.");
 		// requires you to press enter/return to continue
 		getchar();
-		//creates a file called history.txt
-		FILE *f = fopen("history.txt","w");
-		 	for (int i =0; i < count; i++)
-		 	{
-				//prints the last 4 commands into a file called history.txt
-		 		fprintf(f,"%s\n",commands[i]);
-		 	}
-			// closes file
-		 	fclose(f);
+		
+		
 	//closing statements	
         printf("SHELL EXITED \n");
         printf("By Group E: \n");
