@@ -21,15 +21,15 @@ void my_exit(char commands[1024][50],int count)
 
 	for (int i = start; i < count; i++)
 	{
-		// prints the last commands in a list
+		// prints the last commands in a list, since start will get 4 commands, only a list of 4 elements will be printed
 		printf("%d : %s\n", i + 1, commands[i]);
 	}
 	//creates a fork
 	int pid = fork();
 
+	//error checking
 	if(pid < 0)
 	{	
-		//error checking
 		printf("Fork failed");
 	}
 	//child
