@@ -1,5 +1,4 @@
-# [CSC 332] Operating Systems Final Project
-Spring 2021
+# [CSC 332] Operating Systems Final Project - Spring 2021
 
 We created our own command shell program using C.
 
