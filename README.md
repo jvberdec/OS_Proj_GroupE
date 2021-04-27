@@ -3,15 +3,15 @@ Spring 2021
 
 We created our own command shell program using C.
 
-Group Leader (Shell) - Julia Berdecía
-Tree - Mohammed Rahman
-List - Steven Bueno
-Path - David Diop
-Exit - Hui Wu
+* Group Leader (Shell) - Julia Berdecía
+* Tree - Mohammed Rahman
+* List - Steven Bueno
+* Path - David Diop
+* Exit - Hui Wu
 
   <img src = 'https://github.com/jvberdec/OS_Proj_GroupE/blob/dev-1/shell_demo.gif/'>
 
-Project Description
+### Project Description
 
 1. shell*: the environment that will execute the rest of nee command. the shell won’t terminate
 unless the exit command gets executed. The shell displays a different command prompt (i.e.
