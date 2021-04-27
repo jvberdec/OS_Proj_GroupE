@@ -9,7 +9,7 @@ List - Steven Bueno
 Path - David Diop
 Exit - Hui Wu
 
-  <img src = 'https://github.com/jvberdec/OS_Proj_GroupE/blob/dev-1/shell_demo.gif/>
+  <img src = 'https://github.com/jvberdec/OS_Proj_GroupE/blob/dev-1/shell_demo.gif/'>
 
 Project Description
 
